@@ -23,20 +23,19 @@ class PerformanceCalculator {
         }
         return result;
     }
+
+    get volumeCredits() {
+        let result = 0 // 적립 포인트.
+        result += Math.max(this.performance.audience - 30, 0)
+        if (this.play.type === 'comedy') {
+            result += Math.floor(this.performance.audience / 5)
+        }
+        return result;
+    }
 }
 
 const createStatementData = (invoice, plays) => {
     const playFor = aPerformance => plays[aPerformance.playID];
-
-
-    const volumeCreditsFor = aPerformance => {
-        let result = 0 // 적립 포인트.
-        result += Math.max(aPerformance.audience - 30, 0)
-        if (aPerformance.play.type === 'comedy') {
-            result += Math.floor(aPerformance.audience / 5)
-        }
-        return result;
-    }
 
     const totalAmount = performances => performances.reduce((total, p) => total + p.amount, 0);
 
@@ -47,7 +46,7 @@ const createStatementData = (invoice, plays) => {
         const result = {...aPerformance}
         result.play = playFor(result);
         result.amount = calculator.amount;
-        result.volumeCredits = volumeCreditsFor(result);
+        result.volumeCredits = calculator.volumeCredits;
         return result;
     }
 

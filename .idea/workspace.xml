@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fad56053-9122-4168-80d2-e8edaccb02fd" name="Changes" comment="- 다형성 활용해 계산코드 구성하기">
+    <list default="true" id="fad56053-9122-4168-80d2-e8edaccb02fd" name="Changes" comment="- 함수들을 계산기로 옮기기">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ch1/createStatementData.js" beforeDir="false" afterPath="$PROJECT_DIR$/ch1/createStatementData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ch1/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/ch1/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +82,7 @@
       <option name="presentableId" value="Default" />
       <updated>1676094039189</updated>
       <workItem from="1676094040376" duration="2483000" />
-      <workItem from="1676096866194" duration="10803000" />
+      <workItem from="1676096866194" duration="10928000" />
     </task>
     <task id="LOCAL-00001" summary="- test">
       <created>1676095021627</created>
@@ -260,7 +259,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676107615210</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="- 함수들을 계산기로 옮기기">
+      <created>1676107856126</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1676107856126</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,6 +307,7 @@
     <MESSAGE value="- file 분리" />
     <MESSAGE value="- 파일 분리 html" />
     <MESSAGE value="- 다형성 활용해 계산코드 구성하기" />
-    <option name="LAST_COMMIT_MESSAGE" value="- 다형성 활용해 계산코드 구성하기" />
+    <MESSAGE value="- 함수들을 계산기로 옮기기" />
+    <option name="LAST_COMMIT_MESSAGE" value="- 함수들을 계산기로 옮기기" />
   </component>
 </project>
