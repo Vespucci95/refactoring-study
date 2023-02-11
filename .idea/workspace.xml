@@ -82,7 +82,7 @@
       <option name="presentableId" value="Default" />
       <updated>1676094039189</updated>
       <workItem from="1676094040376" duration="2483000" />
-      <workItem from="1676096866194" duration="10928000" />
+      <workItem from="1676096866194" duration="11194000" />
     </task>
     <task id="LOCAL-00001" summary="- test">
       <created>1676095021627</created>
@@ -266,7 +266,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676107856126</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="- 함수들을 계산기로 옮기기">
+      <created>1676108017273</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1676108017273</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
