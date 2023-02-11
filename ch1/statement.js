@@ -8,19 +8,19 @@ const statement = (invoice, plays) => {
     minimumFractionDigits: 2,
   }).format
 
-  const amountFor = (play, perf) => {
+  const amountFor = (play, aPerformance) => {
     let result = 0
 
     switch (play.type) {
       case 'tragedy': {
         result = 40000
-        if (perf.audience > 30) result += 1000 * (perf.audience - 30)
+        if (aPerformance.audience > 30) result += 1000 * (aPerformance.audience - 30)
         break
       }
       case 'comedy': {
         result = 30000
-        if (perf.audience > 20) result += 10000 + 500 * (perf.audience - 20)
-        result += 300 * perf.audience
+        if (aPerformance.audience > 20) result += 10000 + 500 * (aPerformance.audience - 20)
+        result += 300 * aPerformance.audience
         break
       }
       default:
