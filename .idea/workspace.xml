@@ -1,14 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fad56053-9122-4168-80d2-e8edaccb02fd" name="Changes" comment="- test" />
+    <list default="true" id="fad56053-9122-4168-80d2-e8edaccb02fd" name="Changes" comment="- test">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ch1/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/ch1/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ch1/statement.js" beforeDir="false" afterPath="$PROJECT_DIR$/ch1/statement.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="ch01-study" />
+                    <option name="lastUsedInstant" value="1676097547" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="master" />
+                    <option name="lastUsedInstant" value="1676097546" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -39,7 +74,7 @@
       <option name="presentableId" value="Default" />
       <updated>1676094039189</updated>
       <workItem from="1676094040376" duration="2483000" />
-      <workItem from="1676096866194" duration="95000" />
+      <workItem from="1676096866194" duration="2005000" />
     </task>
     <task id="LOCAL-00001" summary="- test">
       <created>1676095021627</created>
