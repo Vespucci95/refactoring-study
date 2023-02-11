@@ -5,5 +5,5 @@ const invoices = readJSON('ch1/invoices.json')
 const plays = readJSON('ch1/plays.json')
 
 invoices.forEach(invoice => {
-  console.log(htmlStatement(invoice, plays))
+  console.log(statement(invoice, plays))
 })

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fad56053-9122-4168-80d2-e8edaccb02fd" name="Changes" comment="- 파일 분리 html">
+    <list default="true" id="fad56053-9122-4168-80d2-e8edaccb02fd" name="Changes" comment="- 다형성 활용해 계산코드 구성하기">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ch1/createStatementData.js" beforeDir="false" afterPath="$PROJECT_DIR$/ch1/createStatementData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ch1/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/ch1/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +44,9 @@
       </RecentBranches>
     </option>
   </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="426b7bdd-e4a6-49a4-95f9-e31e8dda0a90" />
+  </component>
   <component name="GithubProjectSettings">
     <option name="branchProtectionPatterns">
       <list>
@@ -79,7 +83,7 @@
       <option name="presentableId" value="Default" />
       <updated>1676094039189</updated>
       <workItem from="1676094040376" duration="2483000" />
-      <workItem from="1676096866194" duration="10551000" />
+      <workItem from="1676096866194" duration="10803000" />
     </task>
     <task id="LOCAL-00001" summary="- test">
       <created>1676095021627</created>
@@ -249,7 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676106537875</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="- 다형성 활용해 계산코드 구성하기">
+      <created>1676107615210</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1676107615210</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,6 +300,7 @@
     <MESSAGE value="- 데이타 처리 분리" />
     <MESSAGE value="- file 분리" />
     <MESSAGE value="- 파일 분리 html" />
-    <option name="LAST_COMMIT_MESSAGE" value="- 파일 분리 html" />
+    <MESSAGE value="- 다형성 활용해 계산코드 구성하기" />
+    <option name="LAST_COMMIT_MESSAGE" value="- 다형성 활용해 계산코드 구성하기" />
   </component>
 </project>
