@@ -8,9 +8,11 @@ const statement = (invoice, plays) => {
     minimumFractionDigits: 2,
   }).format
 
+  const playFor = (aPerformance) => plays[aPerformance.playID];
+
   const amountFor = (play, aPerformance) => {
     let result = 0
-
+    // const play = playFor(aPerformance);
     switch (play.type) {
       case 'tragedy': {
         result = 40000
@@ -30,7 +32,7 @@ const statement = (invoice, plays) => {
   }
 
   for (let perf of invoice.performances) {
-    const play = plays[perf.playID]
+    const play = playFor(perf);
     let thisAmount = amountFor(play, perf);
 
     volumeCredits += Math.max(perf.audience - 30, 0)
