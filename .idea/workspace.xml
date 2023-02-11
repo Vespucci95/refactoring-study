@@ -42,6 +42,13 @@
       </RecentBranches>
     </option>
   </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="master" />
+      </list>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -71,7 +78,7 @@
       <option name="presentableId" value="Default" />
       <updated>1676094039189</updated>
       <workItem from="1676094040376" duration="2483000" />
-      <workItem from="1676096866194" duration="4519000" />
+      <workItem from="1676096866194" duration="4678000" />
     </task>
     <task id="LOCAL-00001" summary="- test">
       <created>1676095021627</created>
@@ -143,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676101367020</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="- format 함수 리팩터링 44p">
+      <created>1676101405723</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1676101405723</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
