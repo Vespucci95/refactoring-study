@@ -31,7 +31,7 @@ const statement = (invoice, plays) => {
     }
 
     for (let perf of invoice.performances) {
-        let thisAmount = amountFor(perf, playFor(perf));
+        let thisAmount = amountFor(perf);
 
         volumeCredits += Math.max(perf.audience - 30, 0)
         if (playFor(perf).type === 'comedy') volumeCredits += Math.floor(perf.audience / 5)
