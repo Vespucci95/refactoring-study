@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fad56053-9122-4168-80d2-e8edaccb02fd" name="Changes" comment="- 59p 반복문을 파이프라인으로 바꾸기">
+    <list default="true" id="fad56053-9122-4168-80d2-e8edaccb02fd" name="Changes" comment="- 데이타 처리 분리">
+      <change afterPath="$PROJECT_DIR$/ch1/createStatementData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ch1/statement.js" beforeDir="false" afterPath="$PROJECT_DIR$/ch1/statement.js" afterDir="false" />
     </list>
@@ -79,7 +80,7 @@
       <option name="presentableId" value="Default" />
       <updated>1676094039189</updated>
       <workItem from="1676094040376" duration="2483000" />
-      <workItem from="1676096866194" duration="8948000" />
+      <workItem from="1676096866194" duration="9071000" />
     </task>
     <task id="LOCAL-00001" summary="- test">
       <created>1676095021627</created>
@@ -228,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676105576539</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="- 데이타 처리 분리">
+      <created>1676105859448</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1676105859448</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,6 +273,7 @@
     <MESSAGE value="- 57p" />
     <MESSAGE value="- 59p" />
     <MESSAGE value="- 59p 반복문을 파이프라인으로 바꾸기" />
-    <option name="LAST_COMMIT_MESSAGE" value="- 59p 반복문을 파이프라인으로 바꾸기" />
+    <MESSAGE value="- 데이타 처리 분리" />
+    <option name="LAST_COMMIT_MESSAGE" value="- 데이타 처리 분리" />
   </component>
 </project>
