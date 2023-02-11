@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fad56053-9122-4168-80d2-e8edaccb02fd" name="Changes" comment="- 매개변수 제거">
+    <list default="true" id="fad56053-9122-4168-80d2-e8edaccb02fd" name="Changes" comment="- 변수 인라인 하기 39p">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ch1/statement.js" beforeDir="false" afterPath="$PROJECT_DIR$/ch1/statement.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +72,7 @@
       <option name="presentableId" value="Default" />
       <updated>1676094039189</updated>
       <workItem from="1676094040376" duration="2483000" />
-      <workItem from="1676096866194" duration="3680000" />
+      <workItem from="1676096866194" duration="4209000" />
     </task>
     <task id="LOCAL-00001" summary="- test">
       <created>1676095021627</created>
@@ -122,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676100235265</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="- 변수 인라인 하기 39p">
+      <created>1676100593008</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1676100593008</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,6 +155,7 @@
     <MESSAGE value="- 변수 인라인하기 36p" />
     <MESSAGE value="- 함수 선언 바꾸기 37p" />
     <MESSAGE value="- 매개변수 제거" />
-    <option name="LAST_COMMIT_MESSAGE" value="- 매개변수 제거" />
+    <MESSAGE value="- 변수 인라인 하기 39p" />
+    <option name="LAST_COMMIT_MESSAGE" value="- 변수 인라인 하기 39p" />
   </component>
 </project>

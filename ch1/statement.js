@@ -1,16 +1,7 @@
 const statement = (invoice, plays) => {
-    let totalAmount = 0 // 총액
-    let volumeCredits = 0 // 적립 포인트.
-    let result = `청구 내역 (고객명: ${invoice.customer})\n`
-    const format = new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        minimumFractionDigits: 2,
-    }).format
+    const playFor = aPerformance => plays[aPerformance.playID];
 
-    const playFor = (aPerformance) => plays[aPerformance.playID];
-
-    const amountFor = (aPerformance) => {
+    const amountFor = aPerformance => {
         let result = 0
         switch (playFor(aPerformance).type) {
             case 'tragedy': {
@@ -30,9 +21,26 @@ const statement = (invoice, plays) => {
         return result;
     }
 
+    const volumeCreditsFor = aPerformance => {
+        let result = 0 // 적립 포인트.
+        result += Math.max(aPerformance.audience - 30, 0)
+        if (playFor(aPerformance).type === 'comedy') {
+            result += Math.floor(aPerformance.audience / 5)
+        }
+        return result;
+    }
+
+    let totalAmount = 0 // 총액
+    let volumeCredits = 0 // 적립 포인트.
+    let result = `청구 내역 (고객명: ${invoice.customer})\n`
+    const format = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 2,
+    }).format
+
     for (let perf of invoice.performances) {
-        volumeCredits += Math.max(perf.audience - 30, 0)
-        if (playFor(perf).type === 'comedy') volumeCredits += Math.floor(perf.audience / 5)
+        volumeCredits += volumeCreditsFor(perf);
         result += `  ${playFor(perf).name}: ${format(amountFor(perf) / 100)} (${perf.audience}석)\n`
         totalAmount += amountFor(perf);
     }
