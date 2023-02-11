@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fad56053-9122-4168-80d2-e8edaccb02fd" name="Changes" comment="- format 함수 리팩터링 44p">
+    <list default="true" id="fad56053-9122-4168-80d2-e8edaccb02fd" name="Changes" comment="- 반복문 쪼개기 리팩터링">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ch1/statement.js" beforeDir="false" afterPath="$PROJECT_DIR$/ch1/statement.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +79,7 @@
       <option name="presentableId" value="Default" />
       <updated>1676094039189</updated>
       <workItem from="1676094040376" duration="2483000" />
-      <workItem from="1676096866194" duration="4678000" />
+      <workItem from="1676096866194" duration="5466000" />
     </task>
     <task id="LOCAL-00001" summary="- test">
       <created>1676095021627</created>
@@ -157,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676101405723</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="- 반복문 쪼개기 리팩터링">
+      <created>1676101610117</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1676101610117</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,6 +193,7 @@
     <MESSAGE value="- 변수 인라인 하기 39p" />
     <MESSAGE value="- 42p" />
     <MESSAGE value="- format 함수 리팩터링 44p" />
-    <option name="LAST_COMMIT_MESSAGE" value="- format 함수 리팩터링 44p" />
+    <MESSAGE value="- 반복문 쪼개기 리팩터링" />
+    <option name="LAST_COMMIT_MESSAGE" value="- 반복문 쪼개기 리팩터링" />
   </component>
 </project>
