@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fad56053-9122-4168-80d2-e8edaccb02fd" name="Changes" comment="- 57p">
+    <list default="true" id="fad56053-9122-4168-80d2-e8edaccb02fd" name="Changes" comment="- 59p">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ch1/statement.js" beforeDir="false" afterPath="$PROJECT_DIR$/ch1/statement.js" afterDir="false" />
     </list>
@@ -79,7 +79,7 @@
       <option name="presentableId" value="Default" />
       <updated>1676094039189</updated>
       <workItem from="1676094040376" duration="2483000" />
-      <workItem from="1676096866194" duration="8466000" />
+      <workItem from="1676096866194" duration="8662000" />
     </task>
     <task id="LOCAL-00001" summary="- test">
       <created>1676095021627</created>
@@ -214,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676104853015</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="- 59p">
+      <created>1676105364579</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1676105364579</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,6 +256,7 @@
     <MESSAGE value="- 중간 데이터 구조로 변경" />
     <MESSAGE value="- 56p" />
     <MESSAGE value="- 57p" />
-    <option name="LAST_COMMIT_MESSAGE" value="- 57p" />
+    <MESSAGE value="- 59p" />
+    <option name="LAST_COMMIT_MESSAGE" value="- 59p" />
   </component>
 </project>

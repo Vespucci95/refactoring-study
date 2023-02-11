@@ -47,21 +47,9 @@ const statement = (invoice, plays) => {
         return result;
     }
 
-    const totalAmount = (performances) => {
-        let result = 0 // 총액
-        for (let perf of performances) {
-            result += perf.amount;
-        }
-        return result;
-    }
+    const totalAmount = performances => performances.reduce((total, p) => total + p.amount, 0);
 
-    const totalVolumeCredits = (performances) => {
-        let result = 0 // 적립 포인트.
-        for (let perf of performances) {
-            result += perf.volumeCredits;
-        }
-        return result;
-    }
+    const totalVolumeCredits = performances => performances.reduce((total, p) => total + p.volumeCredits, 0);
 
     const enrichPerformance = aPerformance => {
         const result = {...aPerformance}
