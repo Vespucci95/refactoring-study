@@ -1,6 +1,6 @@
 import Province from './province.js'
 import {describe, it} from "mocha"
-import {assert} from 'chai'
+import {assert, expect} from 'chai'
 
 const sampleProvinceData = () => ({
     name: 'Asia',
@@ -16,6 +16,6 @@ const sampleProvinceData = () => ({
 describe("province", () => {
     it('shortfall', () => {
         const asia = new Province(sampleProvinceData());
-        assert.equal(asia.shortfall, 5);
+        expect(asia.shortfall).equal(5);
     })
 })
