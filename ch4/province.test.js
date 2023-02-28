@@ -32,6 +32,18 @@ describe("province", () => {
         expect(asia.shortfall).equal(-6);
         expect(asia.profit).equal(292);
     })
+
+    it('zero demand', () => {
+        asia.demand = 0;
+        expect(asia.shortfall).equal(-25)
+        expect(asia.profit).equal(0)
+    })
+
+    it('negative demand', () => {
+        asia.demand = -1;
+        expect(asia.shortfall).equal(-26)
+        expect(asia.profit).equal(-10)
+    })
 })
 
 
