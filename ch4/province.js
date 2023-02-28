@@ -3,10 +3,10 @@ import Producer from './producer.js'
 export default class Province {
     constructor(doc) {
         this._name = doc.name
-        this._producers = []
-        this._totalProduction = 0
-        this._demand = doc.demand
-        this._price = doc.price
+        this._producers = [] // 생산자
+        this._totalProduction = 0 // 생산량
+        this._demand = doc.demand // 수요
+        this._price = doc.price // 가격
         doc.producers.forEach(d => this.addProducer(new Producer(this, d)))
     }
 
@@ -47,23 +47,19 @@ export default class Province {
         this._price = parseInt(arg)
     }
 
-    get shortfall() {
+    get shortfall() { // 생산 부족분 계산
         return this._demand - this.totalProduction
     }
 
-    get profit() {
-        return this.demandValue - this.demandCost
-    }
-
-    get demandValue() {
+    get demandValue() { // 수요
         return this.satisfiedDemand * this.price
     }
 
-    get satisfiedDemand() {
+    get satisfiedDemand() { // 공급량
         return Math.min(this._demand, this.totalProduction)
     }
 
-    get demandCost() {
+    get demandCost() { // 비용
         let remainingDemand = this.demand
         let result = 0
         this.producers
@@ -74,5 +70,9 @@ export default class Province {
                 result += contribution * p.cost
             })
         return result
+    }
+
+    get profit() { // 수익
+        return this.demandValue - this.demandCost
     }
 }
