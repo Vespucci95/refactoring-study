@@ -21,6 +21,10 @@ class NumberRange {
         return this._data.max
     }
 
+    contains(r) {
+        return r.temp >= range.min && r.temp <= range.max
+    }
+
 }
 
 const operatingPlan = {
@@ -28,7 +32,7 @@ const operatingPlan = {
     temperatureCeiling: 56,
 }
 const range = new NumberRange(operatingPlan.temperatureFloor, operatingPlan.temperatureCeiling);
-const readingsOutsideRange = (station, range) => station.readings.filter(r => r.temp < range.min || r.temp > range.max)
+const readingsOutsideRange = (station, range) => station.readings.filter(r => !range.contains(r))
 
 
 console.log(readingsOutsideRange(station, range))
