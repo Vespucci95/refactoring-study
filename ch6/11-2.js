@@ -9,11 +9,13 @@ class Order {
 }
 
 class CommandLine {
-    constructor() {
+    constructor(args) {
+        if (args.length === 0) {
+            throw new Error('파일명을 입력하세요')
+        }
+        this.onlyCountReady = args.includes('-r')
+        this.fileName = args[args.length - 1]
     }
-
-    onlyCountReady
-    fileName
 }
 
 const countOrders = (commandLine) => {
@@ -27,21 +29,9 @@ const countOrders = (commandLine) => {
     }
 }
 
-const parseCommandLine = (args) => {
-    if (args.length === 0) {
-        throw new Error('파일명을 입력하세요')
-    }
-    const result = new CommandLine();
-    result.onlyCountReady = args.includes('-r')
-    result.fileName = args[args.length - 1]
-    return result;
-}
-
-const run = args => countOrders(parseCommandLine(args))
-
 const main = (args) => {
     try {
-        console.log(run(args));
+        console.log(countOrders(new CommandLine(args)));
     } catch (err) {
         console.error(err)
     }
