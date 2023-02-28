@@ -13,8 +13,15 @@ class CommandLine {
         if (args.length === 0) {
             throw new Error('파일명을 입력하세요')
         }
-        this.onlyCountReady = args.includes('-r')
-        this.fileName = args[args.length - 1]
+        this._args = args;
+    }
+
+    get onlyCountReady() {
+        return this._args.includes('-r')
+    }
+
+    get fileName() {
+        return this._args[this._args.length - 1]
     }
 }
 
