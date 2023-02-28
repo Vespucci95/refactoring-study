@@ -27,15 +27,17 @@ const countOrders = (commandLine) => {
     }
 }
 
-const run = args => {
+const parseCommandLine = (args) => {
     if (args.length === 0) {
         throw new Error('파일명을 입력하세요')
     }
-    const commandLine = new CommandLine();
-    commandLine.onlyCountReady = args.includes('-r')
-    commandLine.fileName = args[args.length - 1]
-    return countOrders(commandLine);
+    const result = new CommandLine();
+    result.onlyCountReady = args.includes('-r')
+    result.fileName = args[args.length - 1]
+    return result;
 }
+
+const run = args => countOrders(parseCommandLine(args))
 
 const main = (args) => {
     try {
