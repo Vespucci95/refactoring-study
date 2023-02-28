@@ -7,6 +7,7 @@ const calculateBaseCharge = aReading => baseRate(aReading.month, aReading.year) 
 export const enrichReading = original => {
   const result = cloneDeep(original);
   result.baseCharge = calculateBaseCharge(result)
+  result.taxableCharge = Math.max(0, result.baseCharge - taxThreshold(result.year));
   return result
 }
 
@@ -20,15 +21,12 @@ const acquireReading = () => ({
 const client1 = () => {
   const rawReading = acquireReading()
   const aReading = enrichReading(rawReading);
-  const baseCharge = baseRate(aReading.month, aReading.year) * aReading.quantity
-  return baseCharge
+  return aReading.baseCharge
 }
 const client2 = () => {
   const rawReading = acquireReading()
   const aReading = enrichReading(rawReading);
-  const base = baseRate(aReading.month, aReading.year) * aReading.quantity
-  const taxableCharge = Math.max(0, base - taxThreshold(aReading.year))
-  return taxableCharge
+  return aReading.taxableCharge
 }
 
 const client3 = () => {
