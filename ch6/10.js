@@ -1,7 +1,7 @@
-const baseRate = (month, year) => year - 2000 + month
-
-const taxThreshold = year => (year - 2000) * 0.1
 import cloneDeep from "lodash/cloneDeep.js";
+
+const baseRate = (month, year) => year - 2000 + month
+const taxThreshold = year => (year - 2000) * 0.1
 
 const enrichReading = original => {
   return cloneDeep(original);
