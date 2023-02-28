@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fad56053-9122-4168-80d2-e8edaccb02fd" name="Changes" comment="- file 정리">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ch4/province.js" beforeDir="false" afterPath="$PROJECT_DIR$/ch4/province.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ch4/producer.js" beforeDir="false" afterPath="$PROJECT_DIR$/ch4/producer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +84,7 @@
       <updated>1676094039189</updated>
       <workItem from="1676094040376" duration="2483000" />
       <workItem from="1676096866194" duration="14242000" />
-      <workItem from="1677568449434" duration="530000" />
+      <workItem from="1677568449434" duration="737000" />
     </task>
     <task id="LOCAL-00001" summary="- test">
       <created>1676095021627</created>
@@ -324,7 +324,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676110458202</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="- file 정리">
+      <created>1677568994977</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1677568994977</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
