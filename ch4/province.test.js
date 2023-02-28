@@ -84,7 +84,6 @@ describe('string for producers', () => {
             price: 20,
         }
         const prov = new Province(data);
-        expect(prov.shortfall).equal(0)
+        expect(prov.shortfall).equal(0);
     })
-
 })
