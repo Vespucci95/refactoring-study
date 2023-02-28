@@ -8,13 +8,18 @@ class Order {
     }
 }
 
-class CommandLine {}
+class CommandLine {
+    constructor() {
+    }
 
-const countOrders = (commandLine, args, filename) => {
-    const input = readJSON(filename)
+    onlyCountReady
+    fileName
+}
+
+const countOrders = (commandLine) => {
+    const input = readJSON(commandLine.fileName)
     const orders = input.map(item => new Order(item))
-
-    if (args.includes('-r')) {
+    if (commandLine.onlyCountReady) {
         const readyOrders = orders.filter(o => o.product.status === 'ready')
         return readyOrders.length
     } else {
@@ -27,8 +32,9 @@ const run = args => {
         throw new Error('파일명을 입력하세요')
     }
     const commandLine = new CommandLine();
-    const filename = args[args.length - 1]
-    return countOrders(commandLine, args, filename);
+    commandLine.onlyCountReady = args.includes('-r')
+    commandLine.fileName = args[args.length - 1]
+    return countOrders(commandLine);
 }
 
 const main = (args) => {
