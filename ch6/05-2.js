@@ -29,10 +29,10 @@ const someCustomers = [
   },
 ]
 
-const innewNewEngland = stateCode => {
+const inNewEngland = stateCode => {
   return ['MA', 'CT', 'ME', 'VT', 'NH', 'RI'].includes(stateCode);
 }
 
-const newEnglanders = someCustomers.filter(c => innewNewEngland(c.address.state))
+const newEnglanders = someCustomers.filter(c => inNewEngland(c.address.state))
 
 console.log(newEnglanders)
