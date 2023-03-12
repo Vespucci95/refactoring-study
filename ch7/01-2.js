@@ -8,13 +8,11 @@ class CustomerData {
     }
 
     usage(customerId, year, month) {
-        return this._data[customerId].usages[year][month];
+        return cloneDeep(this._data)[customerId].usages[year][month];
     }
 
     setUsage(customerId, year, month, amount) {
-        const newData = cloneDeep(this._data);
-        newData[customerId].usages[year][month] = amount
-        this._data = newData;
+        this._data[customerId].usages[year][month] = amount
     }
 
     get rawData() {
