@@ -7,7 +7,11 @@ class CustomerData {
         this._data = data;
     }
 
-    setUsage (customerId, year, month, amount) {
+    usage(customerId, year, month) {
+        return this._data[customerId].usages[year][month];
+    }
+
+    setUsage(customerId, year, month, amount) {
         this._data[customerId].usages[year][month] = amount
     }
 
@@ -29,8 +33,8 @@ export const writeData = (customerId, year, month, amount) => {
 }
 
 export const compareUsage = (customerId, laterYear, month) => {
-    const later = getRawDataOfCustomers()[customerId].usages[laterYear][month]
-    const earlier = getRawDataOfCustomers()[customerId].usages[laterYear - 1][month]
+    const later = getCustomerData().usage(customerId, laterYear, month)
+    const earlier = getCustomerData().usage(customerId, laterYear - 1, month)
     return {laterAmount: later, change: later - earlier}
 }
 export const getCustomer = () => customerData
