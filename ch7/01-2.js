@@ -12,7 +12,9 @@ class CustomerData {
     }
 
     setUsage(customerId, year, month, amount) {
-        this._data[customerId].usages[year][month] = amount
+        const newData = cloneDeep(this._data);
+        newData[customerId].usages[year][month] = amount
+        this._data = newData;
     }
 
     get rawData() {
@@ -22,12 +24,7 @@ class CustomerData {
 
 let customerData = new CustomerData(readJSON('ch7/01-2.json'))
 
-const getCustomerData = () => customerData;
-export const getRawDataOfCustomers = () => customerData._data;
-const setRawDataOfCustomers = (arg) => {
-    customerData = new CustomerData(arg);
-};
-
+export const getCustomerData = () => customerData;
 export const writeData = (customerId, year, month, amount) => {
     getCustomerData().setUsage(customerId, year, month, amount)
 }
@@ -37,4 +34,3 @@ export const compareUsage = (customerId, laterYear, month) => {
     const earlier = getCustomerData().usage(customerId, laterYear - 1, month)
     return {laterAmount: later, change: later - earlier}
 }
-export const getCustomer = () => customerData
