@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="fad56053-9122-4168-80d2-e8edaccb02fd" name="Changes" comment="- file 정리">
+    <list default="true" id="25669c82-ba84-440a-b819-d5c439b7811e" name="Changes" comment="285p">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ch4/province.js" beforeDir="false" afterPath="$PROJECT_DIR$/ch4/province.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ch8/01-2.js" beforeDir="false" afterPath="$PROJECT_DIR$/ch8/01-2.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,16 +47,6 @@
       </RecentBranches>
     </option>
   </component>
-  <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="426b7bdd-e4a6-49a4-95f9-e31e8dda0a90" />
-  </component>
-  <component name="GithubProjectSettings">
-    <option name="branchProtectionPatterns">
-      <list>
-        <option value="master" />
-      </list>
-    </option>
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -63,21 +56,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/hyeonseo_mac/Desktop/CATE_FORWORD/study/refactoring-master&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/hyeonseo_mac/Desktop/CATE_FORWORD/study/refactoring-master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "settings.editor.selected.configurable": "cn.yiiguxing.plugin.translate",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="fad56053-9122-4168-80d2-e8edaccb02fd" name="Changes" comment="" />
+      <changelist id="25669c82-ba84-440a-b819-d5c439b7811e" name="Changes" comment="285p" />
       <created>1676094039189</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -85,34 +81,7 @@
       <workItem from="1676094040376" duration="2483000" />
       <workItem from="1676096866194" duration="14242000" />
       <workItem from="1677568449434" duration="737000" />
-    </task>
-    <task id="LOCAL-00001" summary="- test">
-      <created>1676095021627</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1676095021627</updated>
-    </task>
-    <task id="LOCAL-00002" summary="- 함수 추출하기 33p">
-      <created>1676098903068</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1676098903068</updated>
-    </task>
-    <task id="LOCAL-00003" summary="- 매개변수 변경하기">
-      <created>1676099349730</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1676099349730</updated>
-    </task>
-    <task id="LOCAL-00004" summary="- play 변수 제거하기 35p">
-      <created>1676099664448</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1676099664448</updated>
+      <workItem from="1678725145232" duration="2148000" />
     </task>
     <task id="LOCAL-00005" summary="- 변수 인라인하기 36p">
       <created>1676099975589</created>
@@ -331,7 +300,133 @@
       <option name="project" value="LOCAL" />
       <updated>1677568994977</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="- 상수를 캡슐화하기">
+      <created>1678612069424</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1678612069424</updated>
+    </task>
+    <task id="LOCAL-00037" summary="240p">
+      <created>1678612897624</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1678612897624</updated>
+    </task>
+    <task id="LOCAL-00038" summary="240p">
+      <created>1678613056844</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1678613056844</updated>
+    </task>
+    <task id="LOCAL-00039" summary="241p 변수 캡슐화">
+      <created>1678614980056</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1678614980056</updated>
+    </task>
+    <task id="LOCAL-00040" summary="242p">
+      <created>1678615301599</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1678615301599</updated>
+    </task>
+    <task id="LOCAL-00041" summary="243p">
+      <created>1678615839024</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1678615839024</updated>
+    </task>
+    <task id="LOCAL-00042" summary="244p">
+      <created>1678616206056</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1678616206056</updated>
+    </task>
+    <task id="LOCAL-00043" summary="244p">
+      <created>1678616520864</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1678616520864</updated>
+    </task>
+    <task id="LOCAL-00044" summary="244p">
+      <created>1678616900247</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1678616900247</updated>
+    </task>
+    <task id="LOCAL-00045" summary="250p">
+      <created>1678618249647</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1678618249647</updated>
+    </task>
+    <task id="LOCAL-00046" summary="255p">
+      <created>1678719410875</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1678719410875</updated>
+    </task>
+    <task id="LOCAL-00047" summary="259p">
+      <created>1678720297854</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1678720297854</updated>
+    </task>
+    <task id="LOCAL-00048" summary="263p">
+      <created>1678720798516</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1678720798516</updated>
+    </task>
+    <task id="LOCAL-00049" summary="267p">
+      <created>1678721444396</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1678721444396</updated>
+    </task>
+    <task id="LOCAL-00050" summary="270p">
+      <created>1678721925338</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1678721925339</updated>
+    </task>
+    <task id="LOCAL-00051" summary="273p">
+      <created>1678722191842</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1678722191842</updated>
+    </task>
+    <task id="LOCAL-00052" summary="275p">
+      <created>1678722409084</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1678722409084</updated>
+    </task>
+    <task id="LOCAL-00053" summary="285p">
+      <created>1678724843447</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1678724843447</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -342,28 +437,25 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/ch01-study" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="- 매개변수 변경하기" />
-    <MESSAGE value="- play 변수 제거하기 35p" />
-    <MESSAGE value="- 변수 인라인하기 36p" />
-    <MESSAGE value="- 함수 선언 바꾸기 37p" />
-    <MESSAGE value="- 매개변수 제거" />
-    <MESSAGE value="- 변수 인라인 하기 39p" />
-    <MESSAGE value="- 42p" />
-    <MESSAGE value="- format 함수 리팩터링 44p" />
-    <MESSAGE value="- 반복문 쪼개기 리팩터링" />
-    <MESSAGE value="- 함수 추출하기 / 변수를 인라인 하기 46p" />
-    <MESSAGE value="- 함수 추출하기 / 변수를 인라인 하기 49p" />
-    <MESSAGE value="- 52p" />
-    <MESSAGE value="- 중간 데이터 구조로 변경" />
-    <MESSAGE value="- 56p" />
-    <MESSAGE value="- 57p" />
     <MESSAGE value="- 59p" />
     <MESSAGE value="- 59p 반복문을 파이프라인으로 바꾸기" />
     <MESSAGE value="- 데이타 처리 분리" />
@@ -374,6 +466,21 @@
     <MESSAGE value="- 생성자를 팩터리 함수로 바꾸기" />
     <MESSAGE value="- 포인트 계산 방식이 다른방식의 경우 서브클래스로 내린다." />
     <MESSAGE value="- file 정리" />
-    <option name="LAST_COMMIT_MESSAGE" value="- file 정리" />
+    <MESSAGE value="- 상수를 캡슐화하기" />
+    <MESSAGE value="240p" />
+    <MESSAGE value="241p 변수 캡슐화" />
+    <MESSAGE value="242p" />
+    <MESSAGE value="243p" />
+    <MESSAGE value="244p" />
+    <MESSAGE value="250p" />
+    <MESSAGE value="255p" />
+    <MESSAGE value="259p" />
+    <MESSAGE value="263p" />
+    <MESSAGE value="267p" />
+    <MESSAGE value="270p" />
+    <MESSAGE value="273p" />
+    <MESSAGE value="275p" />
+    <MESSAGE value="285p" />
+    <option name="LAST_COMMIT_MESSAGE" value="285p" />
   </component>
 </project>
