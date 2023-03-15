@@ -1,29 +1,39 @@
 class Customer {
   _name
-  _discountRate
   _contract
 
   constructor(name, discountRate) {
     this._name = name
-    this._discountRate = discountRate
-    this._contract = new CustomerContract(new Date())
+    this._contract = new CustomerContract(new Date(), discountRate)
   }
   get discountRate() {
-    return this._discountRate
+    return this._contract.discountRate
+  }
+  _setDiscountRate(number) {
+    this._contract.discountRate = number;
   }
   becomePreferred() {
-    this._discountRate += 0.03
+    this._setDiscountRate(this._contract.discountRate + 0.03)
     // do other stuff
   }
   applyDiscount(amount) {
-    return amount.subtract(amount.multiply(this._discountRate))
+    return amount.subtract(amount.multiply(this.discountRate))
   }
 }
 
 class CustomerContract {
   _startDate
-  constructor(startDate) {
+  _discountRate
+  constructor(startDate, discountRate) {
     this._startDate = startDate
+    this._discountRate = discountRate
+  }
+
+  get discountRate() {
+    return this._discountRate;
+  }
+  set discountRate(arg) {
+    this._discountRate = arg;
   }
 }
 
