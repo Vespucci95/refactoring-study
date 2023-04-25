@@ -1,23 +1,30 @@
 const scenario = {
-  primaryForce: 100,
-  secondaryForce: 10,
-  mass: 10,
-  delay: 40,
+    primaryForce: 100,
+    secondaryForce: 10,
+    mass: 10,
+    delay: 40,
 }
 
-const distanceTravelled = (scenario, time) => {
-  let result
-  const primaryAcceleration = scenario.primaryForce / scenario.mass // (a = F / m)
-  let primaryTime = Math.min(time, scenario.delay)
-  result = 0.5 * acc * primaryTime ** 2
+const getDistance = (acc, time) => 0.5 * acc * time ** 2
+const acceleration = (force, mass) => force / mass;
 
-  const secondaryTime = time - scenario.delay
-  if (secondaryTime > 0) {
-    const primaryVelocity = primaryAcceleration * scenario.delay
-    const secondaryAcceleration = (scenario.primaryForce + scenario.secondaryForce) / scenario.mass
-    result += primaryVelocity * secondaryTime + 0.5 * secondaryAcceleration * secondaryTime ** 2
-  }
-  return result
+const primary = (delay, primaryForce, mass, time) => {
+    const primaryAcceleration = acceleration(primaryForce, mass) // (a = F / m)
+    return {
+        primaryAcceleration: acceleration(primaryForce, mass),
+        primaryResult: getDistance(primaryAcceleration, Math.min(time, delay))
+    };
+}
+
+const distanceTravelled = ({delay, primaryForce, secondaryForce, mass}, time) => {
+    const {primaryResult, primaryAcceleration} = primary(delay, primaryForce, mass, time);
+    const secondaryTime = time - delay
+    if (secondaryTime <= 0) return primaryResult;
+    return (
+        primaryResult +
+        primaryAcceleration * delay * secondaryTime +
+        getDistance(acceleration((primaryForce + secondaryForce), mass), secondaryTime)
+    )
 }
 
 console.log(distanceTravelled(scenario, 100))
