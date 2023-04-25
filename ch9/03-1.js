@@ -1,12 +1,10 @@
 class ProductionPlan {
-  #production = 0
   #adjustments = []
   get production() {
-    return this.#production
+    return this.#adjustments.reduce((sum, a) => sum + a.amount, 0);
   }
   applyAdjustment(anAdjustment) {
     this.#adjustments.push(anAdjustment)
-    this.#production += anAdjustment.amount
   }
 }
 
