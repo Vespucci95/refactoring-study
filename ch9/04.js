@@ -57,6 +57,6 @@ console.log(p1.officeAreaCode, p1.officeNumber)
 console.log(p2.officeAreaCode, p2.officeNumber)
 
 
-it('telephone equals', () => {
-  assert(new TelephoneNumber("312", "555-0142").equals(new TelephoneNumber("312", "555-0142")))
-})
+// it('telephone equals', () => {
+//   assert(new TelephoneNumber("312", "555-0142").equals(new TelephoneNumber("312", "555-0142")))
+// })

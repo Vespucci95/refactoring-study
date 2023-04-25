@@ -7,13 +7,20 @@ class Customer {
     return this.#id
   }
 }
-
+const _repositoryData = {customers: new Map()};
+const registerCustomer = (id) => {
+  if(!_repositoryData.customers.has(id)) {
+    _repositoryData.customers.set(id, new Customer(id));
+  }
+  return findCustomer(id);
+}
+const findCustomer = id => _repositoryData.customers.get(id)
 class Order {
   #number
   #customer
   constructor(data) {
     this.#number = data.number
-    this.#customer = new Customer(data.customer)
+    this.#customer = registerCustomer(data.customer)
   }
   get customer() {
     return this.#customer
