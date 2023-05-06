@@ -1,3 +1,6 @@
+const feathers = birds => new Map(birds.map(b => [b.name, feather(b)]))
+const velocities = birds => new Map(birds.map(b => [b.name, velocity(b)]))
+
 class Bird {
     constructor(birdObject) {
         Object.assign(this, birdObject)
@@ -30,14 +33,28 @@ class Bird {
     }
 }
 
-const feathers = birds => new Map(birds.map(b => [b.name, feather(b)]))
-const velocities = birds => new Map(birds.map(b => [b.name, velocity(b)]))
+class EuropeanSwallow extends Bird {}
+class AfricanSwallow extends Bird {}
+class NorwegianBlueParrot extends Bird {}
+
+const createBird = bird => {
+    switch (bird.type) {
+        case '유럽 제비':
+            return new EuropeanSwallow(bird);
+        case '아프리카 제비':
+            return new AfricanSwallow(bird);
+        case '노르웨이 파랑 앵무':
+            return new NorwegianBlueParrot(bird);
+        default:
+            return new Bird(bird);
+    }
+}
 
 const feather = bird => {
-    return new Bird(bird).feather
+    return createBird(bird).feather
 }
 const velocity = bird => {
-    return new Bird(bird).velocity
+    return createBird(bird).velocity
 }
 
 const birds = [
