@@ -7,35 +7,39 @@ class Bird {
     }
 
     get feather() {
-        switch (this.type) {
-            case '유럽 제비':
-                return '보통'
-            case '아프리카 제비':
-                return this.numberOfCoconuts > 2 ? '지침' : '보통'
-            case '노르웨이 파랑 앵무':
-                return this.voltage > 100 ? '그을림' : '예쁨'
-            default:
-                return '알수없음'
-        }
+        return '알수없음'
     }
 
     get velocity() {
-        switch (this.type) {
-            case '유럽 제비':
-                return 35
-            case '아프리카 제비':
-                return 40 - 2 * this.numberOfCoconuts
-            case '노르웨이 파랑 앵무':
-                return this.isNailed ? 0 : 10 + this.voltage / 10
-            default:
-                return null
-        }
+        return null
     }
 }
 
-class EuropeanSwallow extends Bird {}
-class AfricanSwallow extends Bird {}
-class NorwegianBlueParrot extends Bird {}
+class EuropeanSwallow extends Bird {
+    get feather() {
+        return '보통'
+    }
+
+    get velocity() {
+        return 35
+    }
+}
+class AfricanSwallow extends Bird {
+    get feather() {
+        return this.numberOfCoconuts > 2 ? '지침' : '보통'
+    }
+    get velocity() {
+        return 40 - 2 * this.numberOfCoconuts
+    }
+}
+class NorwegianBlueParrot extends Bird {
+    get feather() {
+        return this.voltage > 100 ? '그을림' : '예쁨'
+    }
+    get velocity() {
+        return this.isNailed ? 0 : 10 + this.voltage / 10
+    }
+}
 
 const createBird = bird => {
     switch (bird.type) {
