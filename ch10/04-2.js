@@ -12,6 +12,7 @@ class Rating {
         if (vpf * 3 > vr + chr * 2) return 'A'
         return 'B'
     }
+
     get voyageRisk() {
         // 항해 경로 위험요소
         let result = 1
@@ -41,15 +42,8 @@ class Rating {
 
     get voyageAndHistoryLengthFactor() {
         let result = 0;
-        if (this.voyage.zone === '중국' && this.hasChina(this.history)) {
-            result += 3
-            if (this.history.length > 10) result += 1
-            if (this.voyage.length > 12) result += 1
-            if (this.voyage.length > 18) result -= 1
-        } else {
-            if (this.history.length > 8) result += 1
-            if (this.voyage.length > 14) result -= 1
-        }
+        if (this.history.length > 8) result += 1
+        if (this.voyage.length > 14) result -= 1
         return result;
     }
 
@@ -63,10 +57,18 @@ class ExperiencedChinaRating extends Rating {
         const result = super.captainHistoryRisk - 2;
         return Math.max(result, 0)
     }
+
+    get voyageAndHistoryLengthFactor() {
+        let result = 3;
+        if (this.history.length > 10) result += 1
+        if (this.voyage.length > 12) result += 1
+        if (this.voyage.length > 18) result -= 1
+        return result;
+    }
 }
 
 const createRating = (voyage, history) => {
-    if(voyage.zone === "중국" && history.some(v => v.zone === "중국")) {
+    if (voyage.zone === "중국" && history.some(v => v.zone === "중국")) {
         return new ExperiencedChinaRating(voyage, history)
     }
     return new Rating(voyage, history)
