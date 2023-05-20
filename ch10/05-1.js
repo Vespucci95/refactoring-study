@@ -6,6 +6,13 @@ class UnknownCustomer {
   get name() { return '거주자'};
   get billingPlan() { return registry.billingPlans.basic };
   set billingPlan(arg) {}
+  get paymentHistory() { return new NullPaymentHistory() }
+}
+
+class NullPaymentHistory {
+  get weeksDelinquentInLastYear() {
+    return 0
+  }
 }
 
 class Site {
@@ -55,5 +62,5 @@ const client3 = () => {
 }
 const client4 = () => {
   const customer = new Site().customer
-  const weeksDelinquent = isUnknown(customer) ? 0 : customer.paymentHsitry.weeksDelinquentInLastYear
+  const weeksDelinquent = customer.paymentHistory.weeksDelinquentInLastYear
 }
