@@ -1,8 +1,17 @@
 const registry = { billingPlans: { basic: '' } }
+class UnknownCustomer {
+  get isUnknown() {
+    return true
+  }
+  get name() { return '거주자'};
+  get billingPlan() { return registry.billingPlans.basic };
+  set billingPlan(arg) {}
+}
+
 class Site {
   _customer
   get customer() {
-    return this._customer
+    return this._customer === '미확인 고객' ? new UnknownCustomer() : this._customer
   }
 }
 
@@ -26,32 +35,23 @@ class Customer {
     return this._paymentHistory
   }
 }
-
-class UnknownCustomer {
-    get isUnknown() {
-        return true
-    }
-}
 const isUnknown = (arg) => {
   if(!(arg instanceof Customer) && (arg !== "미확인 고객")) {
     throw new Error('잘못된 값과 비교')
   }
-  return arg === "미확인 고객"
+  return arg.isUnknown
 }
 const client1 = () => {
   const customer = new Site().customer
-  //...
-  let customerName
-  if (isUnknown(customer)) customerName = '거주자'
-  else customerName = customer.name
+  const customerName = customer.name
 }
 const client2 = () => {
   const customer = new Site().customer
-  const plan = isUnknown(customer) ? registry.billingPlans.basic : customer.billingPlan
+  const plan = customer.billingPlan
 }
 const client3 = () => {
   const customer = new Site().customer
-  if (!isUnknown(customer)) customer.billingPlan = 'new Plan'
+  customer.billingPlan = 'new Plan'
 }
 const client4 = () => {
   const customer = new Site().customer
