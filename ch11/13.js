@@ -16,9 +16,9 @@ class ResourcePool {
   available = []
   allocated = new Set()
   get() {
-    const result = this.available.length === 0 ? Resource.create() : this.available.pop();
-    this.allocated.add(result);
-    return result
+    const resource = this.available.length === 0 ? Resource.create() : this.available.pop();
+    this.allocated.add(resource);
+    return resource
   }
   add() {
     this.available.push(Resource.create())
