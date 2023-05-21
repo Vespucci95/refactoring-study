@@ -26,19 +26,32 @@ class Order {
 
 const deliveryDate = (anOrder, isRush) => {
   let deliveryTime
-  if (['MA', 'CT'].includes(anOrder.deliveryState)) deliveryTime = isRush ? 1 : 2
+  if (['MA', 'CT'].includes(anOrder.deliveryState)) {
+    deliveryTime = isRush ? 1 : 2
+  }
   else if (['NY', 'NH'].includes(anOrder.deliveryState)) {
     deliveryTime = 2
-    if (anOrder.deliveryState === 'NH' && isRush) deliveryTime = 3
-  } else if (isRush) deliveryTime = 3
-  else if (anOrder.deliveryState === 'ME') deliveryTime = 3
-  else deliveryTime = 4
+    if (anOrder.deliveryState === 'NH' && isRush) {
+      deliveryTime = 3
+    }
+  } else if (isRush) {
+    deliveryTime = 3
+  }
+  else if (anOrder.deliveryState === 'ME') {
+    deliveryTime = 3
+  }
+  else {
+    deliveryTime = 4
+  }
   let result = anOrder.placedOn.plusDays(2 + deliveryTime)
   if (isRush) result = result.minusDays(1)
   return result
 }
 
-console.log(deliveryDate(new Order('MA'), true).date)
-console.log(deliveryDate(new Order('NH'), true).date)
-console.log(deliveryDate(new Order('CT'), false).date)
-console.log(deliveryDate(new Order('ME'), false).date)
+const rushDeliveryDate = (anOrder) =>  deliveryDate(anOrder, true)
+const regularDeliveryDate = (anOrder) =>  deliveryDate(anOrder, true)
+
+console.log(rushDeliveryDate(new Order('MA')).date)
+console.log(rushDeliveryDate(new Order('NH')).date)
+console.log(regularDeliveryDate(new Order('CT')).date)
+console.log(regularDeliveryDate(new Order('ME')).date)
