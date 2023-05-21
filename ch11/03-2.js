@@ -24,25 +24,22 @@ class Order {
   }
 }
 
-const deliveryDate = (anOrder, isRush) => {
-  let deliveryTime
+function getDeliveryDate(anOrder, isRush) {
   if (['MA', 'CT'].includes(anOrder.deliveryState)) {
-    deliveryTime = isRush ? 1 : 2
-  }
-  else if (['NY', 'NH'].includes(anOrder.deliveryState)) {
-    deliveryTime = 2
-    if (anOrder.deliveryState === 'NH' && isRush) {
-      deliveryTime = 3
-    }
+    return isRush ? 1 : 2
+  } else if (['NY', 'NH'].includes(anOrder.deliveryState)) {
+    return anOrder.deliveryState === 'NH' && isRush ? 3 : 2
   } else if (isRush) {
-    deliveryTime = 3
+    return 3
+  } else if (anOrder.deliveryState === 'ME') {
+    return 3
+  } else {
+    return 4
   }
-  else if (anOrder.deliveryState === 'ME') {
-    deliveryTime = 3
-  }
-  else {
-    deliveryTime = 4
-  }
+}
+
+const deliveryDate = (anOrder, isRush) => {
+  const deliveryTime = getDeliveryDate(anOrder, isRush);
   let result = anOrder.placedOn.plusDays(2 + deliveryTime)
   if (isRush) result = result.minusDays(1)
   return result
