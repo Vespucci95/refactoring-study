@@ -1,3 +1,12 @@
+class OrderProcessingError extends Error {
+  code
+  constructor(errorCode) {
+    super(`주문 처리 오류${errorCode}`)
+    this.code = errorCode;
+  }
+  get name() {return 'OrderProcessingError'}
+}
+
 class ShippingRules {
   data
   constructor(data) {
@@ -15,17 +24,23 @@ const errorList = []
 const localShippingRules = country => {
   const data = countryData.shippingRules[country]
   if (data) return new ShippingRules(data)
-  else return -23
+  else throw new OrderProcessingError(-23)
 }
 const calculateShippingCosts = order => {
   // 관련 없는 코드
   const shippingRules = localShippingRules(order.country)
-  if (shippingRules < 0) return shippingRules
   // 관련 없는 코드
 }
 const execute = order => {
-  const state = calculateShippingCosts(order)
-  if (state < 0) errorList.push({ order, errorCode: state })
+  try {
+    calculateShippingCosts(order)
+  } catch (e) {
+    if(e instanceof OrderProcessingError) {
+      errorList.push({ order, errorCode: e.code })
+    } else {
+      throw e;
+    }
+  }
 }
 
 execute({ country: 'US' })
