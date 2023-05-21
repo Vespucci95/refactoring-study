@@ -2,6 +2,11 @@ class HeatingPlan {
     #max
     #min
 
+    constructor(max, min) {
+        this.#max = max
+        this.#min = min
+    }
+
     targetTemperature(selectedTemperature) {
         if (selectedTemperature > this.#max) return this.#max
         else if (selectedTemperature < this.#min) return this.#min
