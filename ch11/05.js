@@ -2,15 +2,17 @@ class Order {
   quantity
   itemPrice
   constructor() {}
+  get discountLevel() {
+    return this.quantity > 100 ? 2 : 1
+  }
+
   get finalPrice() {
     const basePrice = this.quantity * this.itemPrice
-    let discountLevel
-    if (this.quantity > 100) discountLevel = 2
-    else discountLevel = 1
-    return this.discountedPrice(basePrice, discountLevel)
+    return this.discountedPrice(basePrice, this.discountLevel)
   }
-  discountedPrice(basePrice, discountLevel) {
-    switch (discountLevel) {
+
+  discountedPrice(basePrice) {
+    switch (this.discountLevel) {
       case 1:
         return basePrice * 0.95
       case 2:
