@@ -25,6 +25,7 @@ class ResourcePool {
   }
 }
 
+
 const pool = new ResourcePool()
 pool.get()
 console.log({ available: pool.available, allocated: pool.allocated })
