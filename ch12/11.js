@@ -20,11 +20,20 @@ class CatalogItem {
   }
 }
 
-class Scroll extends CatalogItem {
+class Scroll {
   #lastCleaned
   constructor(id, title, tags, dataLastCleaned) {
-    super(id, title, tags)
+    this._catalogItem = new CatalogItem(id, title, tags);
     this.#lastCleaned = dataLastCleaned
+  }
+  get id() {
+    return this._catalogItem._id
+  }
+  get title() {
+    return this._catalogItem._title
+  }
+  hasTag(arg) {
+    return this._catalogItem._tags.includes(arg)
   }
   needsCleaning(targetDate) {
     const threshold = this.hasTag('revered') ? 700 : 1500
