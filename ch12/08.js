@@ -6,6 +6,10 @@ class Party {
   get name() {
     return this._name
   }
+  get monthlyCost() {
+    throw new Error('Not Implemented')
+    return 0;
+  }
   get annualCost() {
     return this.monthlyCost * 12
   }
