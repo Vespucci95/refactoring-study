@@ -4,6 +4,7 @@ class Bird {
   constructor(data) {
     this._name = data.name
     this._feather = data.feather
+    this._speciesDelegate = this.selectSpeciesDelegate(data)
   }
   get name() {
     return this._name
@@ -12,11 +13,24 @@ class Bird {
     return this._feather || '보통'
   }
   get airSpeedVelocity() {
-    return null
+    return this._speciesDelegate ? this._speciesDelegate.airSpeedVelocity : null;
+  }
+  selectSpeciesDelegate(data) {
+    switch (data.type) {
+      case 'european':
+        return new EuropeanSwallowDelegate()
+      default:
+        return null;
+    }
   }
 }
 
 class EuropeanSwallow extends Bird {
+  get airSpeedVelocity() {
+    return this._speciesDelegate.airSpeedVelocity;
+  }
+}
+class EuropeanSwallowDelegate {
   get airSpeedVelocity() {
     return 35
   }
@@ -31,6 +45,7 @@ class AfricanSwallow extends Bird {
     return 40 - 2 * this.#numberOfCoconuts
   }
 }
+
 class NorwegianBlueParrot extends Bird {
   #voltage
   #isNailed
@@ -60,6 +75,7 @@ const createBird = data => {
       return new Bird(data)
   }
 }
+
 const birds = [
   createBird({ type: 'european', name: '유제' }),
   createBird({ type: 'african', name: '아제1', numberOfCoconuts: 2 }),
