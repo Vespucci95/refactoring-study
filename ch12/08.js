@@ -6,6 +6,9 @@ class Party {
   get name() {
     return this._name
   }
+  get annualCost() {
+    return this.monthlyCost * 12
+  }
 }
 
 class Employee extends Party {
@@ -22,9 +25,6 @@ class Employee extends Party {
   get id() {
     return this.#id
   }
-  get annualCost() {
-    return this.#monthlyCost * 12
-  }
 }
 
 class Department extends Party {
@@ -33,17 +33,8 @@ class Department extends Party {
     super(name);
     this.#staff = staff
   }
-  get staff() {
-    return this.#staff
-  }
-  get totalMonthlyCost() {
+  get monthlyCost() {
     return this.#staff.map(e => e.monthlyCost).reduce((sum, cost) => sum + cost, 0)
-  }
-  get headCount() {
-    return this.staff.length
-  }
-  get totalAnnualCost() {
-    return this.totalMonthlyCost * 12
   }
 }
 
@@ -53,4 +44,4 @@ const sales = new Department('Sales', [roy, jay])
 
 console.log(roy.annualCost)
 console.log(jay.annualCost)
-console.log(sales.totalAnnualCost)
+console.log(sales.annualCost)
