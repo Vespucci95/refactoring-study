@@ -1,19 +1,23 @@
+class SubClassResponsibilityError extends Error {}
 class Party {
-  monthlyCost
+  get monthlyCost() {
+    throw new SubClassResponsibilityError();
+  }
   get annualCost() {
     return this.monthlyCost * 12
   }
 }
 
 class Employee extends Party {
-  monthlyCost = 10
+  get monthlyCost() {return 10}
 }
 class Department extends Party {
-  monthlyCost = 20
+  get monthlyCost() {return 20}
 }
 
 const e = new Employee()
 const d = new Department()
+const p = new Party()
 
-console.log(e.annualCost, d.annualCost)
+console.log(e.annualCost, d.annualCost, p.annualCost)
 
