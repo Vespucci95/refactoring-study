@@ -13,64 +13,71 @@ class Bird {
     return this._feather || '보통'
   }
   get airSpeedVelocity() {
-    return this._speciesDelegate ? this._speciesDelegate.airSpeedVelocity : null;
+    return this._speciesDelegate.airSpeedVelocity
   }
+  get plumage() {
+    return this._speciesDelegate.plumage
+  }
+
   selectSpeciesDelegate(data) {
     switch (data.type) {
       case 'european':
-        return new EuropeanSwallowDelegate()
+        return new EuropeanSwallowDelegate(data, this)
       case 'african':
-        return new AfricanSwallowDelegate(data)
+        return new AfricanSwallowDelegate(data, this)
+      case 'norwegian':
+        return new NorwegianBlueParrotDelegate(data, this)
       default:
-        return null;
+        return new SpeciesDelegate(data, this);
     }
   }
 }
+class SpeciesDelegate {
+    constructor(data, bird) {
+      this._bird = bird
+    }
+    get plumage() {
+      return this._bird._plumage || '보통이다'
+    }
+    get airSpeedVelocity() {
+      return null;
+    }
+}
 
-class EuropeanSwallowDelegate {
+class EuropeanSwallowDelegate extends SpeciesDelegate {
   get airSpeedVelocity() {
     return 35
   }
 }
-class AfricanSwallowDelegate {
+class AfricanSwallowDelegate extends SpeciesDelegate {
   #numberOfCoconuts
-  constructor(data) {
+  constructor(data, bird) {
+    super(data, bird)
     this.#numberOfCoconuts = data.numberOfCoconuts
   }
   get airSpeedVelocity() {
     return 40 - 2 * this.#numberOfCoconuts
   }
 }
-
-class NorwegianBlueParrot extends Bird {
+class NorwegianBlueParrotDelegate extends SpeciesDelegate{
   #voltage
   #isNailed
-  constructor(data) {
-    super(data)
+  constructor(data, bird) {
+    super(data, bird);
+    this._bird = bird;
     this.#voltage = data.voltage
     this.#isNailed = data.isNailed
   }
   get feather() {
     if (this.#voltage > 100) return '그을림'
-    return this._feather || '예쁨'
+    return this._bird._feather || '예쁨'
   }
   get airSpeedVelocity() {
     return this.#isNailed ? 0 : 10 + this.#voltage / 10
   }
 }
 
-const createBird = data => {
-  switch (data.type) {
-    case 'european':
-      return new Bird(data)
-    case 'african':
-      return new Bird(data)
-    case 'norwegian':
-      return new NorwegianBlueParrot(data)
-    default:
-      return new Bird(data)
-  }
-}
+const createBird = data => new Bird(data)
 
 const birds = [
   createBird({ type: 'european', name: '유제' }),
