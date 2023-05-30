@@ -1,9 +1,20 @@
 class Employee {
-  #name
+  _name
   _type
+  static createEmployeeType(aString) {
+    switch (aString) {
+      case "engineer":
+        return new Engineer();
+      case "manager":
+        return new Manager();
+      case "salesperson":
+        return new SalesPerson();
+      default: throw new Error(`${aString}라는 직원 유형은 없습니다.`)
+    }
+  }
   constructor(name, type) {
     this.validateType(type)
-    this.#name = name
+    this._name = name
     this._type = type
   }
   validateType(arg) {
@@ -16,24 +27,30 @@ class Employee {
     return this._type
   }
   set type(arg) {
-    this._type = arg
+    this._type = Employee.createEmployeeType(arg);
   }
   get capitalizedType() {
     return this.typeString.charAt(0).toUpperCase() + this.typeString.slice(1).toLowerCase()
   }
   toString() {
-    return `${this.#name} is a ${this.capitalizedType}`
+    return `${this._name} is a ${this.capitalizedType}`
   }
 }
 
 class EmployeeType {
-  constructor(str) {
-    this._value = str;
-  }
-  toString() { return this._value }
+}
+
+class Engineer extends EmployeeType {
+  toString() {return "engineer"}
+}
+class Manager extends EmployeeType {
+  toString() {return "engineer"}
+}
+class SalesPerson extends EmployeeType {
+  toString() {return "engineer"}
 }
 
 console.log(new Employee('roy', 'engineer').toString())
 console.log(new Employee('jay', 'manager').toString())
 console.log(new Employee('kay', 'salesperson').toString())
-console.log(new Employee('tei', 'nobody').toString())
+// console.log(new Employee('tei', 'nobody').toString())
