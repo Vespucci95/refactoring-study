@@ -1,26 +1,36 @@
 class Employee {
   #name
-  #type
+  _type
   constructor(name, type) {
     this.validateType(type)
     this.#name = name
-    this.#type = type
+    this._type = type
   }
   validateType(arg) {
     if (!['engineer', 'manager', 'salesperson'].includes(arg)) throw new Error(`${arg}라는 직원 유형은 없습니다.`)
   }
+  get typeString() {
+    return this._type.toString();
+  }
   get type() {
-    return this.#type
+    return this._type
   }
   set type(arg) {
-    this.#type = arg
+    this._type = arg
   }
   get capitalizedType() {
-    return this.#type.charAt(0).toUpperCase() + this.#type.slice(1).toLowerCase()
+    return this.typeString.charAt(0).toUpperCase() + this.typeString.slice(1).toLowerCase()
   }
   toString() {
     return `${this.#name} is a ${this.capitalizedType}`
   }
+}
+
+class EmployeeType {
+  constructor(str) {
+    this._value = str;
+  }
+  toString() { return this._value }
 }
 
 console.log(new Employee('roy', 'engineer').toString())
