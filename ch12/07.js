@@ -1,16 +1,18 @@
 class Person {
   #name
-  constructor(name) {
+  #genderCode
+  constructor(name,genderCode) {
     this.#name = name
+    this.#genderCode = genderCode;
   }
   isMale() {
-    return this instanceof Male;
+    return this.genderCode  === 'M';
   }
   get name() {
     return this.#name
   }
   get genderCode() {
-    return 'X'
+    return this.#genderCode;
   }
 }
 class Male extends Person {
@@ -32,13 +34,13 @@ const createPerson = aRecord => {
   let p;
   switch (aRecord.gender) {
     case 'M':
-      p = new Male(aRecord.name)
+      p = new Male(aRecord.name, 'M')
       break
     case 'F':
-      p = new Female(aRecord.name)
+      p = new Female(aRecord.name, 'F')
       break
     default:
-      p = new Person(aRecord.name)
+      p = new Person(aRecord.name, "X")
   }
   return p
 }
