@@ -26,11 +26,21 @@ class Booking {
   }
 }
 
+class PremiumBookingDelegate {
+  constructor(hostBooking, extras) {
+    this._host = hostBooking
+    this._extras = extras
+  }
+}
+
 class PremiumBooking extends Booking {
   #extras
   constructor(show, date, extras) {
     super(show, date)
     this.#extras = extras
+  }
+  _bePremium(extras) {
+    this._premiumDelegrate = new PremiumBookingDelegate(this, extras)
   }
   get hasTalkback() {
     return this.show.hasOwnProperty('talkback')
@@ -42,13 +52,19 @@ class PremiumBooking extends Booking {
     return this.#extras.hasOwnProperty('dinner') && !this.isPeakDay
   }
 }
+const createBooking = (show, date) => new Booking(show, date);
+const createPremiumBooking = (show, date, extras) => {
+    const result = new PremiumBooking(show, date, extras)
+    result._bePremium(extras);
+    return result
+}
 
-const booking = new Booking({ price: 100, talkback: true }, dayjs('2021-07-11'))
-const premiumBooking1 = new PremiumBooking({ price: 100, talkback: true }, dayjs('2021-07-13'), {
+const booking = createBooking({ price: 100, talkback: true }, dayjs('2021-07-11'))
+const premiumBooking1 = createPremiumBooking({ price: 100, talkback: true }, dayjs('2021-07-13'), {
   dinner: true,
   premiumFee: 10,
 })
-const premiumBooking2 = new PremiumBooking({ price: 100 }, dayjs('2021-07-17'), {
+const premiumBooking2 = createPremiumBooking({ price: 100 }, dayjs('2021-07-17'), {
   dinner: true,
   premiumFee: 10,
 })
