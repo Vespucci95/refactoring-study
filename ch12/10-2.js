@@ -32,17 +32,6 @@ class EuropeanSwallowDelegate {
     return 35
   }
 }
-class AfricanSwallow extends Bird {
-  #numberOfCoconuts
-  constructor(data) {
-    super(data)
-    this.#numberOfCoconuts = data.numberOfCoconuts
-  }
-  get airSpeedVelocity() {
-    return this._speciesDelegate.airSpeedVelocity
-  }
-}
-
 class AfricanSwallowDelegate {
   #numberOfCoconuts
   constructor(data) {
@@ -75,7 +64,7 @@ const createBird = data => {
     case 'european':
       return new Bird(data)
     case 'african':
-      return new AfricanSwallow(data)
+      return new Bird(data)
     case 'norwegian':
       return new NorwegianBlueParrot(data)
     default:
