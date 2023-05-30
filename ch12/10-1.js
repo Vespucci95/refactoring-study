@@ -18,6 +18,9 @@ class Booking {
     return this._premiumDelegrate ? this._premiumDelegrate.hasTalkback : this.show.hasOwnProperty('talkback') && !this.isPeakDay
   }
   get basePrice() {
+    return this._premiumDelegrate ? this._premiumDelegrate.basePrice : this._privateBasePrice;
+  }
+  get _privateBasePrice() {
     let result = this.show.price
     if (this.isPeakDay) result += Math.round(result * 0.15)
     return result
@@ -25,9 +28,23 @@ class Booking {
   get isPeakDay() {
     return this.date.isAfter(dayjs('2021-07-15')) && this.date.isBefore(dayjs('2021-07-31'))
   }
+  get hasDinner() {
+      return this._premiumDelegrate ? this._premiumDelegrate.hasDinner : undefined
+  }
 
   _bePremium(extras) {
     this._premiumDelegrate = new PremiumBookingDelegate(this, extras)
+  }
+}
+
+class PremiumBooking extends Booking {
+  #extras
+  constructor(show, date, extras) {
+    super(show, date)
+    this.#extras = extras
+  }
+  get hasDinner() {
+    return this.#extras.hasOwnProperty('dinner') && !this.isPeakDay
   }
 }
 
@@ -38,22 +55,14 @@ class PremiumBookingDelegate {
     this._host = hostBooking
     this._extras = extras
   }
+  get hasDinner() {
+    return this._extras.hasOwnProperty('dinner') && !this._host.isPeakDay
+  }
   get hasTalkback() {
     return this._host.show.hasOwnProperty('talkback')
   }
-}
-
-class PremiumBooking extends Booking {
-  #extras
-  constructor(show, date, extras) {
-    super(show, date)
-    this.#extras = extras
-  }
   get basePrice() {
-    return Math.round(super.basePrice + this.#extras.premiumFee)
-  }
-  get hasDinner() {
-    return this.#extras.hasOwnProperty('dinner') && !this.isPeakDay
+    return Math.round(this._host._privateBasePrice + this._extras.premiumFee)
   }
 }
 const createBooking = (show, date) => new Booking(show, date);
