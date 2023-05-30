@@ -3,6 +3,7 @@ import dayjs from 'dayjs'
 class Booking {
   #show
   #date
+  _premiumDelegrate
   constructor(show, date) {
     this.#show = show
     this.#date = date
@@ -14,7 +15,7 @@ class Booking {
     return this.#show
   }
   get hasTalkback() {
-    return this.show.hasOwnProperty('talkback') && !this.isPeakDay
+    return this._premiumDelegrate ? this._premiumDelegrate.hasTalkback : this.show.hasOwnProperty('talkback') && !this.isPeakDay
   }
   get basePrice() {
     let result = this.show.price
@@ -24,12 +25,21 @@ class Booking {
   get isPeakDay() {
     return this.date.isAfter(dayjs('2021-07-15')) && this.date.isBefore(dayjs('2021-07-31'))
   }
+
+  _bePremium(extras) {
+    this._premiumDelegrate = new PremiumBookingDelegate(this, extras)
+  }
 }
 
 class PremiumBookingDelegate {
+  _host
+  _extras
   constructor(hostBooking, extras) {
     this._host = hostBooking
     this._extras = extras
+  }
+  get hasTalkback() {
+    return this._host.show.hasOwnProperty('talkback')
   }
 }
 
@@ -38,12 +48,6 @@ class PremiumBooking extends Booking {
   constructor(show, date, extras) {
     super(show, date)
     this.#extras = extras
-  }
-  _bePremium(extras) {
-    this._premiumDelegrate = new PremiumBookingDelegate(this, extras)
-  }
-  get hasTalkback() {
-    return this.show.hasOwnProperty('talkback')
   }
   get basePrice() {
     return Math.round(super.basePrice + this.#extras.premiumFee)
