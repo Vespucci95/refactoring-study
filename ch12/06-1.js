@@ -1,30 +1,26 @@
 class Employee {
-  #name
-  #type
+  _name
   constructor(name) {
-    this.#name = name
-  }
-  get type() {
-    return '';
+    this._name = name
   }
   toString() {
-    return `${this.#name} is a ${this.#type}`
+    return `${this._name} is a`
   }
 }
 
 class Engineer extends Employee {
-  get type() {
-    return 'engineer'
+  toString() {
+    return `${super.toString()} engineer`
   }
 }
 class SalesPerson extends Employee {
-  get type() {
-    return 'salesperson'
+  toString() {
+    return `${super.toString()} salesperson`
   }
 }
 class Manager extends Employee {
-  get type() {
-    return 'manager'
+  toString() {
+    return `${super.toString()} manager`
   }
 }
 
@@ -44,4 +40,6 @@ const createEmployee = (name, type) => {
 const roy = createEmployee('roy', 'engineer')
 const jay = createEmployee('jay', 'manager')
 const kay = createEmployee('kay', 'salesperson')
-const tei = createEmployee('tei', 'nobody')
+// const tei = createEmployee('tei', 'nobody')
+
+console.log(roy.toString(), jay.toString(), kay.toString())
