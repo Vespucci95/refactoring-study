@@ -34,10 +34,10 @@ const createPerson = aRecord => {
   let p;
   switch (aRecord.gender) {
     case 'M':
-      p = new Male(aRecord.name, 'M')
+      p = new Person(aRecord.name, 'M')
       break
     case 'F':
-      p = new Female(aRecord.name, 'F')
+      p = new Person(aRecord.name, 'F')
       break
     default:
       p = new Person(aRecord.name, "X")
