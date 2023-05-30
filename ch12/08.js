@@ -1,17 +1,23 @@
-class Employee {
-  #name
+class Party {
+  _name
+  constructor(name) {
+    this._name = name
+  }
+  get name() {
+    return this._name
+  }
+}
+
+class Employee extends Party {
   #id
   #monthlyCost
   constructor(name, id, monthlyCost) {
-    this.#name = name
+    super(name);
     this.#id = id
     this.#monthlyCost = monthlyCost
   }
   get monthlyCost() {
     return this.#monthlyCost
-  }
-  get name() {
-    return this.#name
   }
   get id() {
     return this.#id
@@ -21,15 +27,11 @@ class Employee {
   }
 }
 
-class Department {
-  #name
+class Department extends Party {
   #staff
   constructor(name, staff) {
-    this.#name = name
+    super(name);
     this.#staff = staff
-  }
-  get name() {
-    return this.#name
   }
   get staff() {
     return this.#staff
